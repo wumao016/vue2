@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#app {
+	margin: 100px auto;
+	width: 500px;
+	border: 1px solid #eee;
+	height: 400px;
+}
+label {
+	margin-top: 40px;
+	padding-left: 100px;
+	margin-right: 10px;
+	font-size: 12px;
+}
+input {
+	margin-top: 40px;
+	width: 250px;
+	padding: 10px;
+	font-size: 14px;
+}
+ul {
+	width: 254px;
+	margin-left: 153px;
+	border: 1px solid #eee;
+}
+li {
+	line-height: 20px;
+	padding: 10px;
+}
+li.hover,
+li:hover {
+	background: #eee;
+}
+</style>
+<div id="app">
+	<label for="">用户名</label>
+	<input
+		v-on:keydown.up="choosePreLi" 
+		v-on:keydown.down="chooseNextLi" 
+		v-on:keydown.enter="enterChooseLi"
+	    v-model="msg" type="text" placeholder="请输入电子邮箱">
+	<ul v-if="msg">
+		<li transition="demo" v-on:click="clickChooseLi" v-for="btem in list | filterBy dealFn">{{listMsg}}@{{btem}}<template v-if="btem == '189'">.cn</template><template v-else>.com</template></li>
+	</ul>
+</div>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+// 定义vue实例化对象
+var app = new Vue({
+	el: '#app',
+	data: {
+		// 输入的内容
+		msg: '',
+		// 是否点击过向上键或者向下键
+		hasMove: false,
+		// 定义当前li的索引值
+		currentLi: 0,
+		// 定义邮箱前缀
+		list: ['qq', '163', '126', '189', 'sina', 'hotmail', 'gmail', 'sohu', '21cn']
+	},
+	computed: {
+		listMsg: function (v) {
+			// 内容发生了改变会执行这里
+			// 重新键盘事件的一些信息
+			v.currentLi = 0;
+			v.hasMove = false;
+			// 要截取v.msg字符串中@符号前面的字符串
+			// 获取@符号位置
+			var pos = v.msg.indexOf('@');
+			return pos >= 0 ? v.msg.slice(0, pos) : v.msg;
+		},
+		// 过滤下拉框的过滤函数
+		dealFn: function () {
+			// 定义过滤字段
+			var filterKey = '';
+			// 判断@符号是否存在
+			if (this.msg.indexOf('@') >= 0) {
+				// 截取@符号后面的字符
+				filterKey = this.msg.slice(this.msg.indexOf('@') + 1)
+			}
+			// 返回处理的函数
+			return function (value, index, arr) {
+				value += value === '189' ? '.c' : '.co';
+				// 查看是否以filterKey字段开头
+				return value.indexOf(filterKey) === 0
+			}
+
+		}
+	},
+	// 定义方法
+	methods: {
+		// 鼠标点击这个li选中它
+		clickChooseLi: function (e) {
+			// console.log(e.target)
+			// 获取内容
+			var msg = e.target.innerHTML;
+			this.msg = msg;
+		},
+		// 点击回车键，获取当前li的内容，并选中
+		enterChooseLi: function () {
+			// 获取所有的li
+			var lis = this.$el.getElementsByTagName('li');
+			// 获取当前索引值
+			var index = this.getCurrentNum();
+			// 获取当前li的内容
+			var msg = lis[index].innerHTML;
+			// 存储msg
+			this.msg = msg;
+		},
+		// 点击向上键，选中上一个li
+		choosePreLi: function (e) {
+			// currentLi减一
+			--this.currentLi;
+			// 显示当前的li
+			this.showCurrentLi()
+			// 此时已经点击过了 
+			this.hasMove = true;
+		},
+		// 点击向下键，选中下一个li
+		chooseNextLi: function (e) {
+			// 要判断之前是否点击过向上键或者是向下键
+			// currentli加一
+			if (this.hasMove) {
+				++this.currentLi;
+			}
+			// 显示当前的li
+			this.showCurrentLi()
+			// 此时已经点击过了
+			this.hasMove = true;
+		},
+		// (num % 10 + 10) % 10
+		// 封装算法
+		getCurrentNum: function () {
+			// 当前有几个li？
+			var len = this.$el.getElementsByTagName('li').length;
+			return (this.currentLi % len + len) % len;
+		},
+		// 根据当前的li来设置li的样式
+		showCurrentLi: function () {
+			// 获取所有的li
+			var lis = this.$el.getElementsByTagName('li');
+			var num = this.getCurrentNum();
+			// 遍历所有的li，为第num个li添加样式
+			for(var i = 0; i < lis.length; i++) {
+				// 删除每一个li的样式，删除hover类
+				lis[i].className = '';
+			}
+			// 第num变成选中态
+			lis[num].className = 'hover'
+		}
+	}
+})
+</script>
+</body>
+</html>
