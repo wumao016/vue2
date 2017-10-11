@@ -4,3 +4,5 @@
  ![image](https://github.com/wumao016/vue2/raw/master/img/index.png)
 #### 2.information文件夹是一个信息录入的页面，用到bootstrap布局,可以录入信息返给后台数据，前端页面显示数据
 ![image](https://github.com/wumao016/vue2/raw/master/img/inf.png)
+#### 3.login文件夹是一个支付宝注册页的功能，对输入的用户名邮箱动态的筛选。
+![image](https://github.com/wumao016/vue2/raw/master/img/log.png)![image](https://github.com/wumao016/vue2/raw/master/img/login.png)
