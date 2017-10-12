@@ -6,3 +6,5 @@
 ![image](https://github.com/wumao016/vue2/raw/master/img/inf.png)
 #### 3.login文件夹是一个模仿支付宝用户名注册提醒的功能。
 ![image](https://github.com/wumao016/vue2/raw/master/img/login.png)
+#### 4.meituan文件夹是一个模仿移动端美团网的案例，用的是node服务器运行的。
+![image](https://github.com/wumao016/vue2/raw/master/img/m.png)
