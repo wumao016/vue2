@@ -243,7 +243,6 @@ function route () {
 	hash = hash.replace(/^#(\/)?/g, '');
 	// 切割hash list/type/1  => ['list', 'type', '1']
 	hash = hash.split('/');
-	// 要知道哪些hash[0]可以直接使用，哪些hash[0]要设置默认值
 	// 定义可以直接使用的
 	var map = {
 		home: true,
