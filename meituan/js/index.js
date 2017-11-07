@@ -236,7 +236,7 @@ function route () {
 	// #list/type/1 => list
 	// #product/10 	=> product
 	// #/abc 		=>home
-	// 定义路由就是解析hash，分析他们
+	// 解析hash
 	// 获取hash
 	var hash = location.hash;
 	// 处理hash, 删除 #或者#/
