@@ -1,0 +1,278 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body {
+	background: #efefef;
+}
+/* 定义工具类 */
+.clearfix:after {
+	clear: both;
+	content: '';
+	display: block;
+} 
+.header {
+	background: #06c1ae;
+	height: 60px;
+	line-height: 60px;
+	color: #fff;
+}
+.header .go-back {
+	float: left;
+	position: relative;
+}
+.header .go-back span {
+	border: 12px solid transparent;
+	border-right: 12px solid #fff;
+	font-size: 0;
+	position: absolute;
+	left: -1px;
+	top: 19px;
+}
+.header .go-back .green {
+	border-right-color: #06c1ae;
+	top: -12px;
+	left: -10px;
+}
+.header .login {
+	float: right;
+	margin-right: 10px;
+	font-size: 14px;
+}
+.header h1 {
+	font-size: 24px;
+	text-align: center;
+	text-indent: 20px;
+}
+.search {
+	background: #fff;
+	padding: 5px 0;
+}
+.search input {
+	background: #efefef;
+	border-radius: 20px;
+	width: 80%;
+	border: none;
+	outline: none;
+	padding: 10px 20px;
+	margin: 0 auto;
+	display: block;
+}
+.home .type {
+	background: #fff;
+	padding-top: 10px;
+}
+.home .type li {
+	float: left;
+	width: 20%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.home .type li img {
+	width: 60%;
+	margin-bottom: 5px;
+}
+.home .type li a {
+	color: #666;
+	font-size: 12px;
+	text-decoration: none;
+}
+.home .ad {
+	margin: 10px auto;
+	background: #fff;
+}
+.home .ad li {
+	float: left;
+	width: 33.33333333%;
+	text-align: center;
+	padding-top: 10px;
+	border-right: 1px solid #ccc;
+	box-sizing: border-box;
+}
+.home .ad li:last-child {
+	border-right: none;
+}
+.home .ad li a {
+	text-decoration: none;
+	font-size: 14px;
+	color: #666;
+}
+.home .ad li h3 {
+	color: red;
+	font-size: 18px;
+	line-height: 28px;
+}
+.home .ad li p {
+	padding: 2px 0 5px;
+}
+.home .ad li img {
+	width: 50%;
+	margin: 5px auto 15px;
+}
+/* 定义商品列表样式 */
+.list {
+	background: #fff;
+	padding: 0 10px;
+} 
+.list li {
+	padding: 10px 0;
+	border-bottom: 1px solid #ccc;
+}
+.list li img {
+	width: 100px;
+	float: left;
+}
+.list a {
+	text-decoration: none;
+	color: #000;
+}
+.list .container {
+	margin-left: 105px;
+	height: 60px;
+	position: relative;
+}
+.list h2 {
+	font-size: 18px;
+}
+.list .container p {
+	position: absolute;
+	bottom: 0;
+	left: 5px;
+	right: 0;
+	font-size: 12px;
+	color: #666;
+}
+.list .container .price {
+	color: #06c1ae;
+}
+.list .container .sales {
+	float: right;
+}
+.lists .type li {
+	float: left;
+	width: 25%;
+	border-right: 1px solid #ccc;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+	font-size: 12px;
+	line-height: 30px;
+	height: 30px;
+	background: #fff;
+	text-indent: 6px;
+	color: #666;
+}
+.lists .type li:last-child {
+	border-right: none;
+}
+.lists .type li span {
+	border: 4px solid transparent;
+	border-top: 4px solid #666;
+	position: relative;
+	top: 11px;
+	left: -1px;
+}
+.lists .load-more {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 14px;
+	color: #06c1ae;
+	background: #fff;
+	border-bottom: 1px solid #ccc;
+}
+.lists .load-more .arrow {
+	font-size: 0;
+	border: 10px solid transparent;
+	border-top: 10px solid #06c1ae;
+	position: relative;
+	left: 5px;
+    top: 2px;
+}
+.lists .load-more .arrow.white {
+	border-top: 10px solid #fff;
+	position: absolute;
+    top: -13px;
+    left: -10px;
+}
+.product .image {
+	position: relative;
+}
+.product .image h1,
+.product .image p {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	color: #fff;
+}
+.product .image h1 {
+	font-size: 30px;
+	bottom: 30px;
+}
+.product .price {
+	background: #fff;
+	border-bottom: 1px solid #ccc;
+	height: 60px;
+	line-height: 60px;
+}
+.product .price .product-price {
+	color: #06c1ae;
+	font-size: 20px;
+	margin-left: 10px;
+}
+.product .price .product-price em {
+	font-size: 40px;
+	font-style: normal;
+}
+.product .price .btn {
+	padding: 8px 15px;
+	float: right;
+	background: orange;
+	color: #fff;
+	line-height: 1em;
+	font-size: 14px;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+.product .sale {
+	background: #fff;
+	padding: 10px 0;
+	margin-bottom: 10px;
+}
+.product .sale li{
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	color: yellowgreen;
+	width: 50%;
+	text-indent: 10px;
+}
+.product .sale li span {
+	color: #666;
+}
+.product .module {
+	padding: 10px;
+	background: #fff;
+	margin-bottom: 10px;
+}
+.product .module-header {
+	border-bottom: 1px solid #ccc;
+	line-height: 60px;
+	font-size: 32px;
+}
+.product .module-footer {
+	border-top: 1px solid #ccc;
+	line-height: 40px;
+	color: skyblue;
+}
+.product .module-body {
+	padding: 10px 0;
+}
+.product .module-body p {
+	line-height: 30px;
+	font-size: 14px;
+}
+.product .module-body h3 {
+	color: orange;
+}
