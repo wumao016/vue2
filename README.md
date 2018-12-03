@@ -8,5 +8,6 @@
 ![image](https://github.com/wumao016/vue2/raw/master/img/login.png)
 #### 4.meituan文件夹是一个模仿移动端美团网的案例，用的是node服务器运行的。
 ![image](https://github.com/wumao016/vue2/raw/master/img/m.png)
-#### 5.fanyi文件夹是一个在线翻译的案例，用到vue cli脚手架。
+#### 5.meituan1文件夹是把之前的美团优化，用vue全家桶。
+#### 6.fanyi文件夹是一个在线翻译的案例，用到vue cli脚手架。
 ![image](https://github.com/wumao016/vue2/raw/master/img/fanyi.png)
